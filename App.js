@@ -1,14 +1,16 @@
-import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image  } from "react-native";
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Image, StatusBar  } from "react-native";
 import TextComponent from "./components/TextComponent";
+import Navbar from "./components/Navbar";
+
 
 const App = () => {
   return[
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="#0d1b2a" barStyle="light-content"/>
+      <Navbar></Navbar>
       <ScrollView>
-        <Text style={styles.title}>Mi biografía</Text>
-        <Image source={require('./assets/images/dogo.jpg')}
-        />
-      <TextComponent/>
+        <Image style={styles.image} source={require('./assets/images/andrei.jpeg')}/>
+        <TextComponent/>
       </ScrollView>
     </SafeAreaView>
   ]
@@ -20,21 +22,13 @@ const styles = StyleSheet.create(
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#487eb0'
-    },
-    title:{
-      fontSize: 20,
-      fontWeight: 'bold',
-      color: '#dfe6e9'
+      backgroundColor: '#415A77'
     },
     image: {
-      width: 100,
-      height: 100
-    },
-    text:{
-      fontSize: 14,
-      fontWeight: 'normal',
-      color: '#dfe6e9'
+      width: 150,
+      height: 200,
+      alignSelf: 'center',
+      margin: 5
     }
   }
 )
